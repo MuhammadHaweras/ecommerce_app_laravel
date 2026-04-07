@@ -12,9 +12,12 @@
                 <p class="mt-4 text-sm {{ $product->stock > 0 ? 'text-green-600' : 'text-red-500' }}">
                     {{ $product->stock > 0 ? 'In Stock ('.$product->stock.' available)' : 'Out of Stock' }}
                 </p>
-                <button class="mt-6 w-full bg-gray-800 text-white py-3 rounded-xl hover:bg-gray-700">
-                    Add to Cart
-                </button>
+                <form method="POST" action="{{ route('cart.add', $product) }}">
+                    @csrf
+                    <button type="submit" class="mt-6 w-full bg-gray-800 text-white py-3 rounded-xl hover:bg-gray-700">
+                        Add to Cart
+                    </button>
+                </form>
             </div>
         </div>
     </div>
