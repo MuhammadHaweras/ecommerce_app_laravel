@@ -70,8 +70,8 @@
                     <p class="text-gray-500 text-sm">Total Amount</p>
                     <p class="text-3xl font-bold text-gray-900">${{ number_format($total, 2) }}</p>
                 </div>
-                <a href="#"
-                   class="bg-gray-900 text-white px-8 py-3 rounded-xl font-semibold hover:bg-gray-700 transition">
+                <a href="{{ route('checkout') }}"
+                   class="bg-gray-900 text-black px-8 py-3 rounded-xl font-semibold hover:bg-gray-700 hover:text-white transition">
                     Proceed to Checkout
                 </a>
             </div>
