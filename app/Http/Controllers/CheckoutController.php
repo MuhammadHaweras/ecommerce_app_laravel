@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderConfirmationMail;
 use App\Services\CheckoutService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -28,6 +30,9 @@ class CheckoutController extends Controller
             return redirect()->route('cart.index')->with('error', 'Payment not completed');
         }
 
+        //  Send Confirmation Mail
+
+        Mail::to($order->user->email)->send(new OrderConfirmationMail($order));
         return view('checkout.success', compact('order'));
     }
 
