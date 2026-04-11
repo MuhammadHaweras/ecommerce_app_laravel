@@ -32,13 +32,14 @@
                 {{-- Cart Icon --}}
                 @auth
                     @php
-                        $cartCount = auth()->user()->cartItems()->sum('quantity');
+                        $cartCount = \App\Models\CartItem::where('user_id', auth()->id())->sum('quantity');
                     @endphp
-                    <a href="{{ route('cart.index') }}" class="relative inline-flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 mr-4">
+                    <a href="{{ route('cart.index') }}"
+                    class="relative inline-flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 mr-4">
                         <span>🛒</span>
                         <span>Cart</span>
                         @if($cartCount > 0)
-                             <span style="background-color: #ef4444; color: white; margin-left: 3px; font-size: 11px; font-weight: bold; border-radius: 9999px; padding: 1px 7px;">
+                            <span class="ml-1 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-0.5">
                                 {{ $cartCount }}
                             </span>
                         @endif

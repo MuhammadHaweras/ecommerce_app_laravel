@@ -60,6 +60,6 @@ class User extends Authenticatable implements FilamentUser
     {
         // Implement your logic to determine if the user can access the Filament admin panel
         // For example, you can check if the user has a specific role or permission
-        return true; // Allow access for all users (for testing purposes)
+        return $this->is_admin === true; // Allow access for all users (for testing purposes)
     }
 }
