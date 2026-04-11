@@ -33,6 +33,7 @@ class CheckoutController extends Controller
         //  Send Confirmation Mail
 
         Mail::to($order->user->email)->send(new OrderConfirmationMail($order));
+
         return view('checkout.success', compact('order'));
     }
 

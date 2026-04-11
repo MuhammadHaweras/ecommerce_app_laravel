@@ -52,8 +52,8 @@ class OrderConfirmationMail extends Mailable
     public function attachments(): array
     {
         $order = $this->order->load(['orderItems.product', 'user']);
-
         $pdf = Pdf::loadView('pdf.invoice', ['order' => $order]);
+
         return [
             \Illuminate\Mail\Mailables\Attachment::fromData(
                 fn() => $pdf->output(),

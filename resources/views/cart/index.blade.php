@@ -59,7 +59,6 @@
                                 ✕ Remove
                             </button>
                         </form>
-                        <a href="{{ route('products.index') }}"> Browse Products...</a>
                     </div>
                 @endforeach
             </div>
