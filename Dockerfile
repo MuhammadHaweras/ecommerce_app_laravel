@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libicu-dev \
-    && docker-php-ext-install intl zip
+    libpq-dev \
+    && docker-php-ext-install intl zip pdo_pgsql pgsql
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -15,4 +16,4 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-CMD php artisan serve --host=0.0.0.0 --port=$PORTs
+CMD php artisan serve --host=0.0.0.0 --port=$PORT
