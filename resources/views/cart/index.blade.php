@@ -59,7 +59,6 @@
                                 ✕ Remove
                             </button>
                         </form>
-                        <a href="{{ route('products.index') }}"> Browse Products...</a>
                     </div>
                 @endforeach
             </div>
@@ -71,7 +70,7 @@
                     <p class="text-3xl font-bold text-gray-900">${{ number_format($total, 2) }}</p>
                 </div>
                 <a href="{{ route('checkout') }}"
-                   class="bg-gray-900 text-black px-8 py-3 rounded-xl font-semibold hover:bg-gray-700 hover:text-white transition">
+                   class="bg-gray-900 text-white px-8 py-3 rounded-xl font-semibold hover:bg-gray-700 hover:text-white transition">
                     Proceed to Checkout
                 </a>
             </div>

@@ -42,6 +42,4 @@ Route::get('/auth/google/callback', [SocialAuthController::class, 'handleGoogleC
 
 Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
 
-
-
 require __DIR__.'/auth.php';

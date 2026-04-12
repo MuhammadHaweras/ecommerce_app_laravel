@@ -8,7 +8,7 @@
 
 @if(session('error'))
     <div id="flash-message"
-         class="fixed top-4 right-4 z-50 bg-red-500 text-white px-6 py-3 rounded-xl shadow-lg flex items-center gap-2">
+         class="fixed top-4 right-4 z-50 w-full bg-red-500 text-white px-6 py-3 rounded-xl shadow-lg flex items-center gap-2">
         <span>✕</span>
         <span>{{ session('error') }}</span>
     </div>

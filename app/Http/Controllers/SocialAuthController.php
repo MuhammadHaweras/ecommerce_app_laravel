@@ -36,6 +36,5 @@ class SocialAuthController extends Controller
 
         Auth::login($user);
         return redirect()->route('products.index');
-
     }
 }

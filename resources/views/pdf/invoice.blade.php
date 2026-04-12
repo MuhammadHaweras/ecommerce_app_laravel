@@ -96,6 +96,5 @@
         <p>Thank you for shopping with TechStore!</p>
         <p>This is an auto-generated invoice. Please keep it for your records.</p>
     </div>
-
 </body>
 </html>
